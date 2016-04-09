@@ -2,6 +2,7 @@ package core
 
 import (
 	"bufio"
+	"github.com/disintegration/imaging"
 	"github.com/oliamb/cutter"
 	"image"
 	"image/jpeg"
@@ -50,4 +51,23 @@ func Crop(source, target, x, y, width, height string) {
 		panic(err)
 	}
 
+}
+
+func Rotate(source, direction string) {
+	src, err := imaging.Open(source)
+	if err != nil {
+		panic(err)
+	}
+
+	var dst *image.NRGBA
+	if direction == "left" {
+		dst = imaging.Rotate90(src)
+	} else if direction == "right" {
+		dst = imaging.Rotate270(src)
+	}
+
+	err = imaging.Save(dst, source)
+	if err != nil {
+		panic(err)
+	}
 }

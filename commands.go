@@ -18,5 +18,10 @@ func init() {
 				Ui: ui,
 			}, nil
 		},
+		"rotate": func() (cli.Command, error) {
+			return &command.RotateCommand{
+				Ui: ui,
+			}, nil
+		},
 	}
 }

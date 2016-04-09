@@ -1,15 +1,8 @@
 package command
 
 import (
-	//"bufio"
 	"flag"
 	"github.com/mitchellh/cli"
-	//"github.com/oliamb/cutter"
-	//"image"
-	//"image/jpeg"
-	//"image/png"
-	//"os"
-	//"strconv"
 	"strings"
 
 	"core"
@@ -27,11 +20,10 @@ func (c *CropCommand) Help() string {
 }
 
 func (c *CropCommand) Synopsis() string {
-	return "이미지를 (startx, starty) 에서 부터 width와 height만큼 잘라줍니다"
+	return "이미지를 (x, y) 에서 부터 width와 height 만큼 자릅니다."
 }
 
 func (c *CropCommand) Run(args []string) int {
-	//fmt.Println("crop run")
 	var source, target, x, y, width, height string
 	cmdFlags := flag.NewFlagSet("crop", flag.ContinueOnError)
 	cmdFlags.Usage = func() { c.Ui.Output(c.Help()) }
