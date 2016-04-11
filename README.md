@@ -16,5 +16,6 @@ go get github.com/sabzil/sz
 ```
 자르기: sz crop -source="./src.jpg" -target="./a.jpg" -x=0 -y=0 -width=30 -height=30
 회전: sz rotate -source="./src.jpg" -direction="left"
+확대/축소: sz resize -source="./src.jpg" -width=80 -height=50 -filter="NearestNeighbor"
 ```
 
