@@ -23,5 +23,10 @@ func init() {
 				Ui: ui,
 			}, nil
 		},
+		"resize": func() (cli.Command, error) {
+			return &command.ResizeCommand{
+				Ui: ui,
+			}, nil
+		},
 	}
 }
